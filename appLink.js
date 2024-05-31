@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     var url = window.location.search;
     var roomName = url.split("mindvr");
-    const appScheme = "unitydl://mindvridge" + roomName[1]; 
+    const appScheme = "unitydl://mindvridge" + roomName[1];
 
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         // iOS
@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", function() {
         const startTime = new Date().getTime();
         const timeout = 1500;
         window.location.href = appScheme;
+
+        /*
         setTimeout(function() {
             const endTime = new Date().getTime();
             if (endTime - startTime < timeout + 100) {
@@ -30,5 +32,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             // `window.close();` 제거됨: 대부분의 브라우저에서는 동작하지 않음.
         }, timeout);
+
+
+         */
     }
 });
