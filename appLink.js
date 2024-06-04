@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
         // iOS
-        openApp(appScheme, appStoreURLiOS);
+        openIosApp(appScheme, appStoreURLiOS);
     } else if (/android/i.test(userAgent)) {
         // Android
         openApp(appScheme, appStoreURL);
@@ -31,5 +31,25 @@ document.addEventListener("DOMContentLoaded", function() {
             }
             // `window.close();` 제거됨: 대부분의 브라우저에서는 동작하지 않음.
         }, timeout);
+    }
+
+    function openIosApp(appScheme, appStoreURL) {
+        const startTime = new Date().getTime();
+        const timeout = 3000;
+       
+
+        window.location.href = appStoreURL;
+        var timeoutId = setTimeout(function() {
+            const endTime = new Date().getTime();
+            if (endTime - startTime < timeout + 100) {
+                window.location.href = appStoreURL;
+            }
+            // `window.close();` 제거됨: 대부분의 브라우저에서는 동작하지 않음.
+        }, timeout);
+        window.onload = () => {
+            clearTimeout(timeoutId);
+        };
+
+      
     }
 });
