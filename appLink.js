@@ -47,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // `window.close();` 제거됨: 대부분의 브라우저에서는 동작하지 않음.
         }, timeout);
         window.onload = () => {
+            window.close();
             clearTimeout(timeoutId);
         };
 
