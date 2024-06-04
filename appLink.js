@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var timeoutId = setTimeout(function() {
             const endTime = new Date().getTime();
             if (endTime - startTime < timeout + 100) {
-                window.location.href = appStoreURL;
+                window.location.href = appScheme;
             }
             // `window.close();` 제거됨: 대부분의 브라우저에서는 동작하지 않음.
         }, timeout);
