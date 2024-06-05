@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function openIosApp(appScheme, appStoreURL) {
         const startTime = new Date().getTime();
-        const timeout = 3000;
+        const timeout = 5000;
        
 
         window.location.href = appScheme;
